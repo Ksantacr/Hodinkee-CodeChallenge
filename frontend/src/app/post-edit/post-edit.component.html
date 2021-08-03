@@ -1,0 +1,81 @@
+<!-- <div class="container custom-container">
+  <div class="col-md-12" *ngIf="!isLoading">
+
+    <h3 class="mb-3 text-center">Update post</h3>
+
+    <div class="form-group">
+      <label for="content">Title:</label>
+      <input type="text" [(ngModel)]="postData.title" class="form-control" placeholder="Name">
+    </div>
+
+    <div class="form-group">
+      <label for="content">Content:</label>
+      <textarea name="content" #content="ngModel" cols="60" rows="5" [(ngModel)]="postData.content">
+      </textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="content">Image:</label>
+      <input type="file" class="form-control" placeholder="Image" accept="image/*" (change)="handleFileInput($event.target.files)">
+    </div>
+
+    <div class="form-group" *ngIf="postData.image" >
+      <label for="content">Preview:</label>
+      <br>
+      <img src="{{postData.image}}" alt="{{postData.title}}" height="150">
+    </div>
+
+    <div class="form-group">
+      <button class="btn btn-success btn-lg btn-block" (click)="updatePost()">Update post</button>
+    </div>
+
+  </div>
+</div> -->
+
+<div class="container" fxLayout="row" fxLayoutAlign="center none">
+  <div fxFlex="95%">
+
+    <mat-card>
+      <mat-card-content>
+        <h2 class="text-center">Update Post</h2>
+
+        <div class="container" fxLayout="row" fxLayoutAlign="center none" *ngIf="!isLoading">
+          <div fxFlex="50%" class="text-center no-records animate">
+
+              <mat-form-field>
+                <mat-label>Title</mat-label>
+                <input matInput [(ngModel)]="postData.title" class="form-control" placeholder="Title" autocomplete="off"/>
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Content</mat-label>
+                <textarea matInput [(ngModel)]="postData.content" name="content" #content="ngModel" ></textarea>
+              </mat-form-field>
+
+              <div class="form-group">
+                <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
+                <input hidden (change)="onFileSelected()" #fileInput type="file" id="file" accept="image/*">
+              </div>
+
+              <div class="form-group mt-5" *ngIf="postData.image">
+                <br>
+                <img src="{{postData.image}}" alt="{{postData.title}}" height="150">
+              </div>
+
+              <div class="form-group mt-5">
+                <button mat-raised-button color="secondary" (click)="GoToList()">Return</button>
+                &nbsp;&nbsp;
+                <button mat-raised-button color="primary" (click)="updatePost()">Update Post</button>
+              </div>
+
+          </div>
+        </div>
+
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+</div>
+
+
+

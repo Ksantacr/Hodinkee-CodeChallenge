@@ -1,0 +1,18 @@
+<!-- <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+  <h5 class="my-0 mr-md-auto font-weight-normal">News</h5>
+  <nav class="my-2 my-md-0 mr-md-3">
+    <a class="btn btn-outline-primary" routerLinkActive="active" routerLink="/create-post">Create post</a>
+  </nav>
+  <a class="btn btn-outline-primary" routerLinkActive="active" routerLink="/post-list">Admin</a>
+</div> -->
+
+<mat-toolbar color="primary" style="display: flex;justify-content: space-between;">
+  <!-- <span>My BLOG</span> -->
+
+  <button mat-raised-button color="secondary" (click)="GoToHome()">Home</button>
+  <button mat-raised-button color="secondary" (click)="GoToAdmin()">Admin</button>
+
+</mat-toolbar>
+
+
+<router-outlet></router-outlet>
